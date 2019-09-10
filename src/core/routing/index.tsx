@@ -6,8 +6,8 @@ import routes from "./routes.config";
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
-      {routes.map((routeProps: RouteProps) => (
-        <Route {...routeProps} />
+      {routes.map((routeProps: RouteProps,index:number) => (
+        <Route key={index} {...routeProps} />
       ))}
     </BrowserRouter>
   );
