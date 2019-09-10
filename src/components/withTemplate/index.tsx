@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { addTodo } from "../core/redux/reducers/default/actions";
-import Header from "./Header";
-import Footer from "./Footer";
-import { IDefaultProps } from "../core/interface";
+import { addTodo } from "../../core/redux/reducers/default/actions";
+import Header from "../Header";
+import Footer from "../Footer";
+import { IDefaultProps } from "../../core/interface";
+
+import "./style.scss";
 
 const mapStateToProps = (state: any) => ({
   todos: state.default.todos
@@ -20,7 +22,9 @@ const withTemplate = (WrappedComponent: React.FC<IDefaultProps>) => {
       return (
         <>
           <Header {...this.props} />
-          <WrappedComponent {...this.props} />
+          <main>
+            <WrappedComponent {...this.props} />
+          </main>
           <Footer {...this.props} />
         </>
       );

@@ -1,19 +1,81 @@
 @import "./variables.scss";
 
-// XS
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: $breakpoint-sm) {
+body,
+html {
+  padding: 0;
+  margin: 0;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: $breakpoint-md) {
+/*
+ * VISIBLE
+ */
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-xl {
+  display: none;
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: $breakpoint-lg) {
+@media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+  .visible-xs {
+    display: block;
+  }
 }
 
-// Extra large devices (large desktops, 1200px and up)
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .visible-sm {
+    display: block;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  .visible-md {
+    display: block;
+  }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+  .visible-lg {
+    display: block;
+  }
+}
+
 @media (min-width: $breakpoint-xl) {
+  .visible-xl {
+    display: block;
+  }
+}
+
+/*
+ * HIDDEN
+ */
+@media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .hidden-xl {
+    display: none;
+  }
 }
