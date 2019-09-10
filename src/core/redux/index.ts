@@ -1,10 +1,13 @@
 import { createStore, compose, combineReducers } from "redux";
+import { createBrowserHistory } from "history";
 
 import DefaultReducer from "./reducers/default";
 
 const appReducer = combineReducers({
   default: DefaultReducer
 });
+
+export const history = createBrowserHistory();
 
 const store = createStore(
   appReducer,
