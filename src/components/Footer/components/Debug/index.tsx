@@ -4,17 +4,23 @@ import "./style.scss";
 
 interface IProps {}
 
+let timeout: NodeJS.Timeout;
+
 const Debug: React.FC<IProps> = (props: IProps) => {
   const [loadTime, setLoadTime] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       const loadTime =
         window.performance.timing.domContentLoadedEventEnd -
         window.performance.timing.navigationStart;
       setLoadTime(loadTime);
     }, 1000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   if (isHidden) return <></>;
