@@ -28,7 +28,7 @@ export const post = (args: IPostArgs) => {
 };
 
 const getHeaders = (currentPersonId?: string): any => ({
-  apiauthentification: process.env.REACT_APP_POONA_TOKEN as string,
+  apiauthentification: process.env.REACT_APP_API_TOKEN as string,
   "Content-Type": "application/json",
   currentPersonId
 });
