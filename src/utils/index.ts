@@ -16,7 +16,7 @@ export const BREAKPOINT_LABELS = {
 
 export const getScreenBreakpoints = () => {
   const width = window.innerWidth;
-  const height = window.innerHeight;
+  // const height = window.innerHeight;
   let breakpoint = "";
 
   if (width >= BREAKPOINTS.XS.min && width <= BREAKPOINTS.XS.max)
@@ -28,8 +28,6 @@ export const getScreenBreakpoints = () => {
   else breakpoint = BREAKPOINT_LABELS.LG;
 
   return {
-    width,
-    height,
     breakpoint
   };
 };

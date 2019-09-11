@@ -22,9 +22,7 @@ interface ILayoutProps extends IDefaultProps {
   updateScreenSizeDispatcher: Function;
 }
 
-interface ILayoutOptions {
-  withBreakpoint?: boolean;
-}
+interface ILayoutOptions {}
 
 const withTemplate = (
   WrappedComponent: React.FC<ILayoutProps>,
@@ -32,24 +30,21 @@ const withTemplate = (
 ) => {
   const newComponent = class extends Component<ILayoutProps, {}> {
     componentDidMount = () => {
-      if (options.withBreakpoint) {
-        this.handleOnSizeChange();
-        window.addEventListener("resize", this.handleOnSizeChange);
-      }
+      this.handleOnSizeChange();
+      window.addEventListener("resize", this.handleOnSizeChange);
     };
 
     componentWillUnmount = () => {
-      if (options.withBreakpoint) {
-        window.addEventListener("resize", this.handleOnSizeChange);
-      }
+      window.addEventListener("resize", this.handleOnSizeChange);
     };
 
     handleOnSizeChange = () => {
-      if (!options.withBreakpoint) return;
-      const { updateScreenSizeDispatcher } = this.props;
-      const screen = getScreenBreakpoints();
+      const { updateScreenSizeDispatcher, screen } = this.props;
+      const newScreenValues = getScreenBreakpoints();
 
-      updateScreenSizeDispatcher(screen);
+      if (newScreenValues.breakpoint === screen.breakpoint) return;
+
+      updateScreenSizeDispatcher(newScreenValues);
     };
 
     render = () => {

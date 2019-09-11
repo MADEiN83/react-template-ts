@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import withTemplate from "../../components/withTemplate";
@@ -10,9 +10,11 @@ import PersonService from "../../services/person";
 interface IProps extends IDefaultProps {}
 
 const Home: React.FC<IProps> = (props: IProps) => {
-  PersonService.fetchPersonByLicence("06060606")
-    .then(r => console.log("fetchPersonByLicence response:", r))
-    .catch(err => console.log("fetchPersonByLicence error:", err));
+  useEffect(() => {
+    PersonService.fetchPersonByLicence("06060606")
+      .then(r => console.log("fetchPersonByLicence response:", r))
+      .catch(err => console.log("fetchPersonByLicence error:", err));
+  }, []);
 
   return (
     <>
