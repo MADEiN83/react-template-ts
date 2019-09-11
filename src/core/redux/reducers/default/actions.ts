@@ -1,8 +1,8 @@
 import { IReduxAction } from "../../../interface";
 
-export const ADD = "ADD";
+export const UPDATE_SCREEN_SIZE = "UPDATE_SCREEN_SIZE";
 
-export const addTodo = (payload: string): IReduxAction => ({
-  type: ADD,
+export const updateScreenSize = (payload: string): IReduxAction => ({
+  type: UPDATE_SCREEN_SIZE,
   payload
 });

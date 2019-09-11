@@ -1,7 +1,7 @@
 import { RouteComponentProps } from "react-router-dom";
 
 export interface IDefaultState {
-  todos: string;
+  screen: { width: number; height: number; breakpoint: string };
 }
 
 export interface IReduxAction {
@@ -9,4 +9,6 @@ export interface IReduxAction {
   payload: any;
 }
 
-export interface IDefaultProps extends RouteComponentProps {}
+export interface IDefaultProps extends RouteComponentProps {
+  screen: { width: number; height: number; breakpoint: string };
+}

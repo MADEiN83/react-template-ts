@@ -8,6 +8,7 @@ import { IDefaultProps } from "../../core/interface";
 interface IProps extends IDefaultProps {}
 
 const OtherPage: React.FC<IProps> = (props: IProps) => {
+  console.log("other page update");
   return (
     <div>
       OtherPage

@@ -1,8 +1,9 @@
 import { IReduxAction, IDefaultState } from "../../../interface";
-import { ADD } from "./actions";
+import { UPDATE_SCREEN_SIZE } from "./actions";
+import { getScreenBreakpoints } from "../../../../utils";
 
 const initialState: IDefaultState = {
-  todos: ""
+  screen: getScreenBreakpoints()
 };
 
 const defaultReducer = (
@@ -10,9 +11,9 @@ const defaultReducer = (
   action: IReduxAction
 ) => {
   switch (action.type) {
-    case ADD:
+    case UPDATE_SCREEN_SIZE:
       return Object.assign({}, state, {
-        todos: action.payload
+        screen: action.payload
       });
     default:
       return state;
