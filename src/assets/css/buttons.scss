@@ -1,0 +1,66 @@
+@import "./variables.scss";
+
+.btn-success {
+  background-color: $color-success;
+  border: 1px solid $color-success;
+  color: white;
+
+  &:hover {
+    background-color: $color-success-hover;
+    border: 1px solid $color-success-hover;
+  }
+}
+
+.btn-danger {
+  background-color: $color-danger;
+  border: 1px solid $color-danger;
+  color: white;
+
+  &:hover {
+    background-color: $color-danger-hover;
+    border: 1px solid $color-danger-hover;
+  }
+}
+
+.btn-info {
+  background-color: $color-info;
+  border: 1px solid $color-info;
+  color: white;
+
+  &:hover {
+    background-color: $color-info-hover;
+    border: 1px solid $color-info-hover;
+  }
+}
+
+.btn-warning {
+  background-color: $color-warning;
+  border: 1px solid $color-warning;
+  color: black;
+
+  &:hover {
+    background-color: $color-warning-hover;
+    border: 1px solid $color-warning-hover;
+  }
+}
+
+.btn-dark {
+  background-color: $color-dark;
+  border: 1px solid $color-dark;
+  color: white;
+
+  &:hover {
+    background-color: $color-dark-hover;
+    border: 1px solid $color-dark-hover;
+  }
+}
+
+[class|="btn"] {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  padding: 5px 20px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "BebasNeue-Bold";
+}

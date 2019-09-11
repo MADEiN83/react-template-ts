@@ -1,8 +1,8 @@
 import React from "react";
 import { IDefaultProps } from "../../core/interface";
 
-import "./style.scss";
 import Debug from "./components/Debug";
+import "./style.scss";
 
 interface IProps extends IDefaultProps {}
 
