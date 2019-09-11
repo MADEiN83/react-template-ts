@@ -5,10 +5,14 @@ import withTemplate from "../../components/withTemplate";
 import { IDefaultProps } from "../../core/interface";
 import { ROUTE_PATHES } from "../../core/routing/routes.config";
 import { BREAKPOINT_LABELS } from "../../utils";
+import PersonService from "../../services/person";
 
 interface IProps extends IDefaultProps {}
 
 const Home: React.FC<IProps> = (props: IProps) => {
+  PersonService.fetchPersonByLicence("06060606").then(r =>
+    console.log("là", r)
+  );
   return (
     <>
       Home page goes here
